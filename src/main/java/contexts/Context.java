@@ -16,15 +16,15 @@ public class Context {
   public static String getCharacter(int i) {
     switch (i) {
       case 0:
-        return Characters.iEatYou;
+        return Characters.I_EAT_YOU;
       case 1:
-        return Characters.iHateYou;
+        return Characters.I_HATE_YOU;
       case 2:
-        return Characters.normal;
+        return Characters.NORMAL;
       case 3:
-        return Characters.iLikeYou;
+        return Characters.I_LIKE_YOU;
       case 4:
-        return Characters.iLoveYou;
+        return Characters.I_LOVE_YOU;
       default:
         return "UnknownCharacter";
     }

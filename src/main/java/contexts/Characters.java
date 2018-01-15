@@ -1,9 +1,9 @@
 package contexts;
 
 interface Characters {
-  String iLoveYou = "ILoveYou!";
-  String iLikeYou = "ILikeYou";
-  String normal = "normal";
-  String iHateYou = "IHateYou";
-  String iEatYou = "Run!";
+  String I_LOVE_YOU = "ILoveYou!";
+  String I_LIKE_YOU = "ILikeYou";
+  String NORMAL = "normal";
+  String I_HATE_YOU = "IHateYou";
+  String I_EAT_YOU = "Run!";
 }
