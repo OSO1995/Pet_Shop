@@ -8,6 +8,11 @@ public class BuySellService {
   private SearchService searchService = Context.getSearch();
   private int money = Integer.MAX_VALUE / 2;
 
+  /**
+   * функция совершения покупки
+   *
+   * @param animal - животное которое покупают
+   */
   public void buy(Animal animal) {
     if (haveMoney(animal.getCost())) {
       petStorage.addAnimals(animal);
@@ -17,6 +22,11 @@ public class BuySellService {
     }
   }
 
+  /**
+   * функция совершения продажи
+   *
+   * @param animal - животное которое продают
+   */
   public void sell(Animal animal) {
     money += animal.getCost();
     petStorage.removeAnimals(animal);

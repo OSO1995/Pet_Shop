@@ -11,6 +11,12 @@ public class RealLifeEmulator {
   private final PollutionJob pollutionJob = Context.getPollutionJob();
   private final CleaningJob cleaningJob = Context.getCleaningJob();
 
+  /**
+   * функция - эмулятор реальной жизни
+   *
+   * @throws Exception - если в магазине нет животных,
+   *                   то попытка продажиживотного вызовет исключительную ситуацию
+   */
   public void start() throws Exception {
     Thread save10Second = new Thread(dataStoringJob);
     save10Second.start();

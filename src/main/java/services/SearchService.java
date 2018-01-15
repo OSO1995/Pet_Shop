@@ -9,6 +9,12 @@ import java.util.List;
 public class SearchService {
   private final PetShopStorage petShopStorage = Context.getStorage();
 
+  /**
+   * функция для поиска животного
+   *
+   * @param animal - экземпляр для поиска
+   * @return true - если такое животное есть в магазине, false - в противном случае
+   */
   public boolean search(Animal animal) {
     return petShopStorage.getAnimals().stream().anyMatch(x -> x.equals(animal));
   }
@@ -19,11 +25,26 @@ public class SearchService {
     return result;
   }
 
+  /**
+   * функция для поиска животного по 2-м параметрам
+   *
+   * @param x - первый параметр
+   * @param y - второй параметр
+   * @return список животных подходящих по описанию
+   */
   public List<Animal> search(String x, String y) {
     List<Animal> tmp = search(x);
     return search(y, tmp);
   }
 
+  /**
+   * функция для поиска животного по 2-м параметрам
+   *
+   * @param x - первый параметр
+   * @param y - второй параметр
+   * @param z - третий параметр
+   * @return список животных подходящих по описанию
+   */
   public List<Animal> search(String x, String y, String z) {
     List<Animal> tmp = search(x);
     tmp = search(y, tmp);
@@ -41,17 +62,41 @@ public class SearchService {
     return result;
   }
 
+  /**
+   * функция для поиска животного по 2-м параметрам
+   *
+   * @param str  - строчный параметр
+   * @param cost - цена
+   * @return список животных подходящих по описанию
+   */
   public List<Animal> search(String str, int cost) {
     List<Animal> tmp = search(cost);
     return search(str, tmp);
   }
 
+  /**
+   * функция для поиска животного по 2-м параметрам
+   *
+   * @param x    - первый параметр
+   * @param y    - второй параметр
+   * @param cost - цена
+   * @return список животных подходящих по описанию
+   */
   public List<Animal> search(String x, String y, int cost) {
     List<Animal> tmp = search(cost);
     tmp = search(x, tmp);
     return search(y, tmp);
   }
 
+  /**
+   * функция для поиска животного по 2-м параметрам
+   *
+   * @param x    - первый параметр
+   * @param y    - второй параметр
+   * @param z    - третий параметр
+   * @param cost - цена
+   * @return список животных подходящих по описанию
+   */
   public List<Animal> search(String x, String y, String z, int cost) {
     List<Animal> tmp = search(cost);
     tmp = search(x, tmp);

@@ -20,6 +20,11 @@ public class PetShopStorage {
     }
   }
 
+  /**
+   * функция возврящающая список животных
+   *
+   * @return
+   */
   public List<Animal> getAnimals() {
     init();
     List<Animal> tmp = new ArrayList<Animal>();
@@ -59,10 +64,20 @@ public class PetShopStorage {
     }
   }
 
+  /**
+   * функция добавляющая животное к списку
+   *
+   * @param animal - зверь над которым производится действие
+   */
   public void addAnimals(Animal animal) {
     this.animals.add(animal);
   }
 
+  /**
+   * функция удаляющая животное из списка
+   *
+   * @param animal - зверь над которым производится действие
+   */
   public void removeAnimals(Animal animal) {
     this.animals.remove(animal);
   }

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class DataStoringJob implements Runnable {
+
   private void save() {
     List<Animal> animalList = Context.getStorage().getAnimals();
     try (BufferedWriter bufferedWriter = new BufferedWriter(
@@ -26,6 +27,9 @@ public class DataStoringJob implements Runnable {
   }
 
   @Override
+  /**
+   * функция сохраняющая животных в .txt файл
+   */
   public void run() {
     while (true) {
       save();

@@ -7,6 +7,9 @@ abstract class AbstractCleanPollutionJob implements Runnable {
   private final PetShopStorage storage = Context.getStorage();
 
   @Override
+  /**
+   * функция выполняющая действие над животными
+   */
   public void run() {
     while (true) {
       storage.getAnimals().forEach(this::actionAnimal);

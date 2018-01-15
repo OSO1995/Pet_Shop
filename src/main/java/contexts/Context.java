@@ -7,12 +7,22 @@ import services.*;
 
 public class Context {
 
-
+  /**
+   * Функция генерирующая имя животного
+   *
+   * @return уникальное значение которое будет использоваться в имени
+   */
   public static String getName() {
     Integer i = (new Date()).hashCode() + (int) (Math.random() * 10);
     return i.toString();
   }
 
+  /**
+   * Функция определяющая характер зверя
+   *
+   * @param i - случайное значение зависящее от места вызова функции
+   * @return характер зверя
+   */
   public static String getCharacter(int i) {
     switch (i) {
       case 0:
@@ -30,34 +40,74 @@ public class Context {
     }
   }
 
+  /**
+   * Функция для поддержания singleton
+   *
+   * @return instance требуемого класса
+   */
   public static PetShopStorage getStorage() {
     return SingletonPetShopStorage.petShopStorageInstance;
   }
 
+  /**
+   * Функция для поддержания singleton
+   *
+   * @return instance требуемого класса
+   */
   public static BuySellService getBuySell() {
     return SingletonBuySellService.buySellServiceInstance;
   }
 
+  /**
+   * Функция для поддержания singleton
+   *
+   * @return instance требуемого класса
+   */
   public static RealLifeEmulator getEmulator() {
     return SingletonRealLifeEmulator.realLifeEmulatorInstance;
   }
 
+  /**
+   * Функция для поддержания singleton
+   *
+   * @return instance требуемого класса
+   */
   public static SearchService getSearch() {
     return SingletonSearchService.searchServiceInstance;
   }
 
+  /**
+   * Функция для поддержания singleton
+   *
+   * @return instance требуемого класса
+   */
   public static DataStoringJob getDataStoring() {
     return SingletonDataStoringJob.dataStoringJobInstance;
   }
 
+  /**
+   * Функция для поддержания singleton
+   *
+   * @return instance требуемого класса
+   */
   public static PrintingService getPrinting() {
     return SingletonPrintingService.printingServiceInstance;
   }
 
+  /**
+   * Функция для поддержания singleton
+   *
+   * @return instance требуемого класса
+   */
   public static PollutionJob getPollutionJob() {
     return SingletonPollutionJob.pollutionJobInstance;
   }
 
+  /**
+   * Функция для поддержания singleton
+   *
+   * @return instance требуемого класса
+   */
   public static CleaningJob getCleaningJob() {
     return SingletonCleaningJob.cleaningJobInstance;
   }
@@ -94,6 +144,11 @@ public class Context {
     private final static CleaningJob cleaningJobInstance = new CleaningJob();
   }
 
+  /**
+   * функция сохранения информации
+   *
+   * @param s - строка требующая сохранения
+   */
   public static void printInfo(String s) {
     getPrinting().saveInfo(s);
     //System.out.println(s);
